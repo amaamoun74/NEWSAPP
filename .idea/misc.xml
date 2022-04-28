@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.147" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/drawable/btn.xml" value="0.112" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.147" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.1" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.147" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/layout/activity_dash_board.xml" value="0.2" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/layout/activity_news_details.xml" value="0.146875" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/layout/activity_news_ui.xml" value="0.136" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/layout/cat_list_item.xml" value="0.146875" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/layout/cat_listitem.xml" value="0.146875" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/layout/news_list_item.xml" value="0.146875" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/layout/news_listitem.xml" value="0.146875" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/menu/details_menu.xml" value="0.23487179487179488" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/menu/search_menu.xml" value="0.536" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.147" />
+        <entry key="..\:/Temp/NEWS2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.147" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
