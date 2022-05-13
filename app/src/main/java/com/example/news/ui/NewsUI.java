@@ -22,7 +22,6 @@ import com.example.news.model.Category;
 import com.example.news.model.News;
 import com.example.news.pojo.CategoryAdapter;
 import com.example.news.pojo.NewsAdapter;
-import com.example.news.pojo.Constants;
 import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,7 +34,7 @@ public class NewsUI extends AppCompatActivity implements CategoryAdapter.ClickCa
     private ArrayList<Category> categoryArrayList;
     CategoryAdapter categoryAdapter;
     NewsAdapter newsAdapter;
-    String categoryName,language;
+    String categoryName, language;
     private static final String api_Key = "791dc72a7bca411b9b212cfcd64e7b4f";
 
     @SuppressLint("NotifyDataSetChanged")
@@ -44,9 +43,9 @@ public class NewsUI extends AppCompatActivity implements CategoryAdapter.ClickCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_ui);
 
-        categoryName=getIntent().getStringExtra("category");
-        language=getIntent().getStringExtra("language");
-        Log.d("language" , language);
+        categoryName = getIntent().getStringExtra("category");
+        language = getIntent().getStringExtra("language");
+       // Log.d("language", language);
 
         progressBar = findViewById(R.id.progressBar);
         categoryRecyclerView = findViewById(R.id.cat_recyclerview);
@@ -59,7 +58,7 @@ public class NewsUI extends AppCompatActivity implements CategoryAdapter.ClickCa
         newsRecyclerView.setAdapter(newsAdapter);
         categoryRecyclerView.setAdapter(categoryAdapter);
         getCategory();
-        getNews(categoryName,language);
+        getNews(categoryName, language);
         newsAdapter.notifyDataSetChanged();
     }
 
@@ -77,15 +76,15 @@ public class NewsUI extends AppCompatActivity implements CategoryAdapter.ClickCa
 
             @Override
             public boolean onQueryTextSubmit(String query) {
-                if(query.length() >0){
-                newsSearch(query);
+                if (query.length() > 0) {
+                    newsSearch(query);
                 }
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if(newText.length() >0) {
+                if (newText.length() > 0) {
                     newsSearch(newText);
                 }
                 return false;
@@ -101,10 +100,10 @@ public class NewsUI extends AppCompatActivity implements CategoryAdapter.ClickCa
         categoryArrayList.add(new Category("entertainment", "https://images.unsplash.com/photo-1530908295418-a12e326966ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHdlYXRoZXJ8ZW58MHx8MHx8&w=1000&q=80"));
         categoryArrayList.add(new Category("Business", "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"));
         categoryArrayList.add(new Category("sports", "https://images.unsplash.com/photo-1558365849-6ebd8b0454b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"));
-        categoryArrayList.add(new Category("technology", "https://images.unsplash.com/photo-1619410283995-43d9134e7656?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"));
-        categoryArrayList.add(new Category("health", "https://images.unsplash.com/photo-1619410283995-43d9134e7656?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"));
-        categoryArrayList.add(new Category("science", "https://images.unsplash.com/photo-1619410283995-43d9134e7656?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"));
-        categoryArrayList.add(new Category("Alahly SC", "https://i.pinimg.com/736x/fb/f4/7d/fbf47dbe695337e8565db74bb58862ea.jpg"));
+        categoryArrayList.add(new Category("technology", "https://images.unsplash.com/photo-1593349480506-8433634cdcbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"));
+        categoryArrayList.add(new Category("health", "https://images.unsplash.com/photo-1620648378507-4ad3fac3bb51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=451&q=80"));
+        categoryArrayList.add(new Category("science", "https://images.unsplash.com/photo-1593349480506-8433634cdcbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"));
+      //  categoryArrayList.add(new Category("Alahly SC", "https://i.pinimg.com/736x/fb/f4/7d/fbf47dbe695337e8565db74bb58862ea.jpg"));
         categoryAdapter.notifyDataSetChanged();
     }
 
@@ -112,8 +111,8 @@ public class NewsUI extends AppCompatActivity implements CategoryAdapter.ClickCa
         progressBar.setVisibility(View.VISIBLE);
         newsArrayList.clear();
         Call<News> callNews;
-        if (categoryName.equals("All") ) {
-          //  callNews = ApiClient.retrofitInstance().create(ApiInterface.class).getAllNews(new Constants().getCountry(), api_Key);
+        if (categoryName.equals("All")) {
+            //  callNews = ApiClient.retrofitInstance().create(ApiInterface.class).getAllNews(new Constants().getCountry(), api_Key);
             callNews = ApiClient.retrofitInstance().create(ApiInterface.class).getAllNews(language, api_Key);
         } else {
             //callNews = ApiClient.retrofitInstance().create(ApiInterface.class).getCategorizedNews(new Constants().getCountry(), categoryName, api_Key);
@@ -160,18 +159,17 @@ public class NewsUI extends AppCompatActivity implements CategoryAdapter.ClickCa
     public void categoryClicking(int position) {
         String categoryName = categoryArrayList.get(position).getCat_name();
         Log.d("category name", categoryName);
-        getNews(categoryName,language);
+        getNews(categoryName, language);
     }
 
     @SuppressLint("NotifyDataSetChanged")
     public void getRsponse(Response<News> response) {
-        Log.d("respponse", response.toString());
+        Log.d("response", response.toString());
         News news = response.body();
         progressBar.setVisibility(View.GONE);
         ArrayList<Article> article;
         if (news != null) {
             article = news.getArticles();
-
             for (int i = 0; i < article.size(); i++) {
                 newsArrayList.add(new Article(article.get(i).getSource(),
                         article.get(i).getAuthor(),

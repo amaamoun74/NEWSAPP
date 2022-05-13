@@ -11,6 +11,7 @@
     android:fitsSystemWindows="true"
     style="@style/Theme.NEWS"
     android:theme="@style/Theme.NEWS"
+    android:background="@color/gray"
 >
 
 <!--
@@ -47,26 +48,28 @@
             android:id="@+id/cat_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            android:scrollbarAlwaysDrawHorizontalTrack="true"
             android:layout_marginTop="10dp"
-            android:scrollbars="horizontal"
-            android:scrollbarStyle="outsideOverlay"
+            android:fitsSystemWindows="true"
             android:orientation="horizontal"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/cat_listitem" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/news_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cat_recyclerview"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/news_listitem"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/news_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cat_recyclerview"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/news_listitem" />
 
 <ProgressBar
     android:id="@+id/progressBar"

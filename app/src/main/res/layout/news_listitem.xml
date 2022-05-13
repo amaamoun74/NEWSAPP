@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="5dp"
-    app:cardBackgroundColor="#66B6B8B2"
-    android:layout_margin="10dp"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="@dimen/_10sdp"
+    app:cardBackgroundColor="#E6DAD7C8"
+    android:layout_margin="15dp"
     >
 
     <RelativeLayout
@@ -20,18 +21,19 @@
             android:layout_height="200dp"
             android:layout_marginBottom="5dp"
             android:contentDescription="@string/todo"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:background="@drawable/image_shape"/>
 
         <TextView
-            android:background="#00CF72B0"
             android:id="@+id/headLine_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/news_imageView"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:background="#00CF72B0"
             android:padding="@dimen/_2sdp"
             android:text="@string/headline"
             android:textColor="@color/black"
@@ -43,10 +45,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/headLine_textView"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:padding="@dimen/_2sdp"
             android:text="@string/description"
             android:textColor="#D02B2A29"

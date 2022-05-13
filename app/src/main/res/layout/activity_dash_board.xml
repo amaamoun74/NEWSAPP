@@ -9,7 +9,7 @@
         tools:context=".ui.DashBoardActivity"
     style="@style/theme"
     android:gravity="center"
-    android:background="@color/white"
+    android:background="@color/gray"
     android:fitsSystemWindows="true"
     >
     <RelativeLayout
@@ -29,9 +29,9 @@
         app:layout_constraintVertical_bias="0.239">
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="0dp"
-
             android:layout_weight="1"
             android:orientation="horizontal"
             android:paddingStart="@dimen/_20sdp"
@@ -43,26 +43,21 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/AllNewsCV"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="#E6DDD8D8"
-                android:outlineAmbientShadowColor="@color/black"
-                android:outlineSpotShadowColor="@color/black"
-                android:elevation="@dimen/_10sdp"
-                tools:ignore="NestedWeights"
-                app:cardUseCompatPadding="true"
-                android:onClick="onClick"
-                android:backgroundTintMode="add">
+
+                app:cardCornerRadius="18dp"
+                android:clickable="true"
+                app:cardElevation="@dimen/_8sdp"
+                tools:ignore="NestedWeights">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    >
+                    android:background="@color/white">
 
                     <ImageView
                         android:id="@+id/newsImage"
@@ -72,17 +67,19 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginEnd="@dimen/_15sdp"
                         android:layout_marginBottom="@dimen/_40sdp"
-                        android:src="@drawable/news" />
+                        android:src="@drawable/news"
+                        android:contentDescription="@string/todo" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginTop="@dimen/_120sdp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/_15sdp"
                         android:gravity="center"
                         android:padding="@dimen/_5sdp"
-                        android:text="All News"
+                        android:text="@string/all_news"
                         android:textColor="@color/black"
                         android:textSize="28sp"
                         android:textStyle="bold" />
@@ -92,23 +89,20 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/BusinessCV"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="#E6DDD8D8"
-                android:outlineAmbientShadowColor="@color/black"
-                android:outlineSpotShadowColor="@color/black"
-                android:elevation="@dimen/_10sdp"
-                app:cardUseCompatPadding="true"
-                android:onClick="onClick">
+                app:cardCornerRadius="18dp"
+                android:clickable="true"
+                app:cardElevation="@dimen/_8sdp"
+                tools:ignore="NestedWeights">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
 
                     <ImageView
                         android:id="@+id/businessImage"
@@ -126,10 +120,11 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginTop="@dimen/_120sdp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/_15sdp"
                         android:gravity="center"
                         android:padding="@dimen/_5sdp"
-                        android:text="Business"
+                        android:text="@string/business"
                         android:textColor="@color/black"
                         android:textSize="28sp"
                         android:textStyle="bold" />
@@ -138,6 +133,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:weightSum="2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -156,18 +152,17 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                tools:ignore="NestedWeights"
-                app:cardBackgroundColor="#E6DDD8D8"
-                android:outlineAmbientShadowColor="@color/black"
-                android:outlineSpotShadowColor="@color/black"
-                android:elevation="@dimen/_10sdp"
-                app:cardUseCompatPadding="true"
-                android:onClick="onClick">
+
+                app:cardCornerRadius="18dp"
+                android:clickable="true"
+                app:cardElevation="@dimen/_15sdp"
+                tools:ignore="NestedWeights">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    >
 
                     <ImageView
                         android:id="@+id/healthImage"
@@ -177,6 +172,7 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginEnd="@dimen/_15sdp"
                         android:layout_marginBottom="@dimen/_40sdp"
+                        android:contentDescription="@string/todo"
                         android:src="@drawable/health" />
 
 
@@ -186,13 +182,10 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-
-                        android:layout_marginStart="0dp"
-                        android:layout_marginEnd="0dp"
-                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
                         android:gravity="center"
                         android:padding="@dimen/_5sdp"
-                        android:text="Health"
+                        android:text="@string/health"
                         android:textColor="@color/black"
                         android:textSize="26sp"
                         android:textStyle="bold" />
@@ -207,18 +200,18 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="#E6DDD8D8"
-                android:outlineAmbientShadowColor="@color/black"
-                android:outlineSpotShadowColor="@color/black"
-                android:elevation="@dimen/_10sdp"
-                app:cardUseCompatPadding="true"
-                android:onClick="onClick">
+                app:cardCornerRadius="18dp"
+                android:clickable="true"
+                app:cardElevation="@dimen/_8sdp"
+                tools:ignore="NestedWeights"
+                >
 
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    >
 
                     <ImageView
                         android:id="@+id/sportImage"
@@ -228,7 +221,8 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginEnd="@dimen/_15sdp"
                         android:layout_marginBottom="@dimen/_40sdp"
-                        android:src="@drawable/sport_news" />
+                        android:src="@drawable/sport_news"
+                        android:contentDescription="@string/todo" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -241,7 +235,7 @@
                         android:layout_marginBottom="@dimen/_15sdp"
                         android:gravity="center"
                         android:padding="@dimen/_5sdp"
-                        android:text="Sport"
+                        android:text="@string/sport"
                         android:textColor="@color/black"
                         android:textSize="28sp"
                         android:textStyle="bold" />
@@ -258,15 +252,17 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/shape"
+        android:elevation="@dimen/_10sdp">
 
         <TextView
             android:id="@+id/gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:background="#E6DDD8D8"
-            android:text="Select News Language "
+            android:background="@drawable/shape"
+            android:elevation="@dimen/_5sdp"
+            android:text="@string/select_news_language"
             android:gravity="center"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -284,7 +280,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10sdp"
                 android:buttonTint="#6E640F"
-                android:text="Arabic"
+                android:text="@string/arabic"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:onClick="onRadioButtonClicked"   />
@@ -295,7 +291,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10sdp"
                 android:buttonTint="#6E640F"
-                android:text="English"
+                android:text="@string/english"
                 android:textStyle=""
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -307,7 +303,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10sdp"
                 android:buttonTint="#6E640F"
-                android:text="French"
+                android:text="@string/french"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:onClick="onRadioButtonClicked"/>

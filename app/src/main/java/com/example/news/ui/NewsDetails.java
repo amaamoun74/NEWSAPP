@@ -63,7 +63,7 @@ public class NewsDetails extends AppCompatActivity {
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plan");
                 i.putExtra(Intent.EXTRA_SUBJECT, title);
-                String body = title + "\n" + uRL + "\n" + "Share from the News App";
+                String body = title + "\n" + uRL + "\n" + "Shared from the News App";
                 i.putExtra(Intent.EXTRA_TEXT, body);
                 startActivity(Intent.createChooser(i, "Share with :"));
 

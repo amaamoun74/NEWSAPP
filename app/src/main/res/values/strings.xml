@@ -2,7 +2,6 @@
     <string name="app_name">NEWS</string>
     <string name="news_app">News App</string>
     <string name="headline">HeadLine</string>
-    <string name="todo">TODO</string>
     <string name="content">Content</string>
     <string name="description">description</string>
     <string name="read_more">Read More</string>
@@ -10,4 +9,13 @@
     <string name="sort_by">Sort By</string>
     <string name="date">Date</string>
     <string name="cat">CAT</string>
+    <string name="business">Business</string>
+    <string name="all_news">All News</string>
+    <string name="todo">TODO</string>
+    <string name="health">Health</string>
+    <string name="sport">Sport</string>
+    <string name="select_news_language">Select News Language</string>
+    <string name="arabic">Arabic</string>
+    <string name="english">English</string>
+    <string name="french">French</string>
 </resources>

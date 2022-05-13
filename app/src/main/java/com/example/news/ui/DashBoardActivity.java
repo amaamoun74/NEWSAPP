@@ -32,65 +32,109 @@ public class DashBoardActivity extends AppCompatActivity {
         english = findViewById(R.id.englishBtn);
 
 
-        sport.setOnClickListener(this::onClick);
-        health.setOnClickListener(this::onClick);
-        allNews.setOnClickListener(this::onClick);
-        business.setOnClickListener(this::onClick);
+        //  health.setOnClickListener(this::onClick);
+        //  allNews.setOnClickListener(this::onClick);
+        //   business.setOnClickListener(this::onClick);
         arabic.setOnClickListener(this::onRadioButtonClicked);
         english.setOnClickListener(this::onRadioButtonClicked);
         french.setOnClickListener(this::onRadioButtonClicked);
-    }
 
-    @SuppressLint("NonConstantResourceId")
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.sportCV:
+
+        sport.setOnClickListener(view -> {
+            if (validate()) {
                 intent = new Intent(getApplicationContext(), NewsUI.class);
                 getLanguage(language);
                 intent.putExtra("category", "sport");
                 startActivity(intent);
-                break;
+            } else {
+                Toast.makeText(getApplicationContext(), "Choose news Language ", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-
-            case R.id.healthCV:
-                intent = new Intent(getApplicationContext(), NewsUI.class);
-                getLanguage(language);
-                intent.putExtra("category", "health");
-                startActivity(intent);
-                break;
-
-
-            case R.id.AllNewsCV:
+        allNews.setOnClickListener(view -> {
+            if (validate()) {
                 intent = new Intent(getApplicationContext(), NewsUI.class);
                 getLanguage(language);
                 intent.putExtra("category", "All");
                 startActivity(intent);
-                break;
+            } else {
+                Toast.makeText(getApplicationContext(), "Choose news Language ", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-            case R.id.BusinessCV:
+        health.setOnClickListener(view -> {
+            if (validate()) {
+                intent = new Intent(getApplicationContext(), NewsUI.class);
+                getLanguage(language);
+                intent.putExtra("category", "health");
+                startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), "Choose news Language ", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        business.setOnClickListener(view -> {
+
+            if (validate()) {
                 intent = new Intent(getApplicationContext(), NewsUI.class);
                 getLanguage(language);
                 intent.putExtra("category", "business");
                 startActivity(intent);
-                break;
+            } else {
+                Toast.makeText(getApplicationContext(), "Choose news Language ", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-        }
     }
+/*
+    @SuppressLint("NonConstantResourceId")
+    public void onClick(View view) {
+        if (validate()) {
+            if (view.getId() == R.id.sportCV) {
+                intent = new Intent(getApplicationContext(), NewsUI.class);
+                getLanguage(language);
+                intent.putExtra("category", "sport");
+                startActivity(intent);
+            } else if (view.getId() == R.id.healthCV) {
+                intent = new Intent(getApplicationContext(), NewsUI.class);
+                getLanguage(language);
+                intent.putExtra("category", "health");
+                startActivity(intent);
+            } else if (view.getId() == R.id.AllNewsCV) {
+
+
+                intent = new Intent(getApplicationContext(), NewsUI.class);
+                getLanguage(language);
+                intent.putExtra("category", "All");
+                startActivity(intent);
+            } else if (view.getId() == R.id.BusinessCV)
+                intent = new Intent(getApplicationContext(), NewsUI.class);
+            getLanguage(language);
+            intent.putExtra("category", "business");
+            startActivity(intent);
+        }
+        else
+            Toast.makeText(getApplicationContext(), "Choose news Language ", Toast.LENGTH_SHORT).show();
+    }
+
+ */
+
+    @SuppressLint("NonConstantResourceId")
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.arabicBtn:
                 if (checked)
                     language = "eg";
-                    break;
+                break;
 
             case R.id.englishBtn:
                 if (checked)
-                    language ="us";
+                    language = "us";
                 break;
 
             case R.id.frenchBtn:
@@ -101,6 +145,18 @@ public class DashBoardActivity extends AppCompatActivity {
     }
 
 
+    Boolean validate() {
+        if (arabic.isChecked()) {
+            return true;
+        } else if (english.isChecked()) {
+            return true;
+        } else if (french.isChecked()) {
+            return true;
+
+        } else {
+            return false;
+        }
+    }
 
     public void getLanguage(String language) {
         if (arabic.isChecked()) {
